@@ -1,0 +1,21 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/marketgame?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  jackson:
+    default-property-inclusion: non_null
+    spring:
+      flyway:
+        locations: classpath:db/migration
+        baselineOnMigrate: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+jwt:
+  secret: 1ce83d62-6d90-44c3-b418-73ca4366e830
+  #expiration: 50000 #50seg - experiation!!
+  expiration: 5000000000 # 1 hr - expiration!! * 1000
